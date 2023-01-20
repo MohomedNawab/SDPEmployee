@@ -326,7 +326,7 @@ class _SecondTwoState extends State<SecondTwo> {
                             builder: (context) => HomePage()));
                   },
                   child: Text(
-                    "Login",
+                    "Logout",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 15.0,
