@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
@@ -73,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
       print(user);
       if (user != null) {
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => Station()));
+            MaterialPageRoute(builder: (context) => SecondTwo()));
       }
 
     } on FirebaseAuthException catch (e) {
@@ -96,18 +97,10 @@ class _LoginScreenState extends State<LoginScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "MyApp Title",
+            "Fuel Station Employee",
             style: TextStyle(
               color: Colors.black,
               fontSize: 28.0,
-            ),
-          ),
-          Text(
-            "Login to Your App",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 44.0,
-              fontWeight: FontWeight.bold,
             ),
           ),
           SizedBox(
@@ -117,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
-                hintText: "User Email",
+                hintText: "Default Email",
                 prefixIcon: Icon(
                   Icons.mail,
                   color: Colors.black,
@@ -129,26 +122,20 @@ class _LoginScreenState extends State<LoginScreen> {
           TextField(
             controller: _passwordController,
             decoration: InputDecoration(
-                hintText: "User Password",
+                hintText: "Password",
                 prefixIcon: Icon(
                   Icons.lock,
                   color: Colors.black,
                 )),
           ),
-          SizedBox(
-            height: 12.0,
-          ),
-          Text(
-            "Forget Password?",
-            style: TextStyle(color: Colors.blue),
-          ),
+
           SizedBox(
             height: 70.0,
           ),
           Container(
             width: double.infinity,
             child: RawMaterialButton(
-              fillColor: Color(0xFF0069FE),
+              fillColor: Colors.red,
               elevation: 0.0,
               padding: EdgeInsets.symmetric(vertical: 20.0),
               shape: RoundedRectangleBorder(
